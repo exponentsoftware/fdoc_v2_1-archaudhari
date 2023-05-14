@@ -85,3 +85,4 @@ function findNthLargest(arr, n) {
   const sorted = arr.sort((a, b) => b - a);
   return sorted[n - 1];
 }
+//2.d

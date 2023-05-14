@@ -56,3 +56,45 @@ function longestIncreasingSubsequence(arr) {
 
   return Math.max(...dp);
 }
+//2.a
+function findPairs(arr, target) {
+  const pairs = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] + arr[j] === target) {
+        pairs.push([arr[i], arr[j]]);
+      }
+    }
+  }
+  return pairs;
+}
+//2.b
+var a = [1, 2, 3, 5, 6, 7, 8, 9, 10],
+  count = 5;
+var missing = new Array();
+
+for (var i = 1; i <= count; i++) {
+  if (a.indexOf(i) == -1) {
+    missing.push(i);
+  }
+}
+console.log(missing);
+//2.c
+function findNthLargest(arr, n) {
+  const sorted = arr.sort((a, b) => b - a);
+  return sorted[n - 1];
+}
+//2.d
+function findMaximumSubarray(arr) {
+  let maxSum = arr[0];
+  let currentSum = arr[0];
+
+  for (let i = 1; i < arr.length; i++) {
+    currentSum = Math.max(currentSum + arr[i], arr[i]);
+    maxSum = Math.max(maxSum, currentSum);
+  }
+
+  return maxSum;
+}
+
